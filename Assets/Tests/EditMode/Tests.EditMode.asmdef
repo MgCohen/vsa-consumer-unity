@@ -1,0 +1,27 @@
+{
+  "name": "Tests.EditMode",
+  "references": [
+    "App",
+    "Counter",
+    "Counter.Domain",
+    "Counter.Contracts.Events",
+    "Counter.Handlers.Events",
+    "UnityEngine.TestRunner",
+    "UnityEditor.TestRunner"
+  ],
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll",
+    "VSA.Domain.dll",
+    "VSA.Contracts.Events.dll",
+    "Microsoft.Extensions.DependencyInjection.dll",
+    "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
+  ],
+  "autoReferenced": false,
+  "includePlatforms": [
+    "Editor"
+  ],
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ]
+}

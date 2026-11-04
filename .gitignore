@@ -1,0 +1,15 @@
+# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Ll]ogs/
+/[Uu]serSettings/
+/*.sln
+/*.slnx
+/*.csproj
+TestResults*.xml
+
+# vendor.cs
+/Vendor/bin/
+/Vendor/obj/

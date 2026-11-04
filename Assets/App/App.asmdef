@@ -1,0 +1,19 @@
+{
+  "name": "App",
+  "references": [
+    "Counter",
+    "Counter.Domain",
+    "Counter.Contracts.Events"
+  ],
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "VSA.Module.dll",
+    "VSA.Domain.dll",
+    "VSA.Contracts.Events.dll",
+    "Microsoft.Extensions.DependencyInjection.dll",
+    "Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+    "Microsoft.Extensions.Configuration.dll",
+    "Microsoft.Extensions.Configuration.Abstractions.dll"
+  ],
+  "autoReferenced": false
+}

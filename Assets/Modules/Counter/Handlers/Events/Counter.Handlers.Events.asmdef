@@ -1,0 +1,14 @@
+{
+  "name": "Counter.Handlers.Events",
+  "references": [
+    "Counter.Contracts.Events"
+  ],
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "VSA.Contracts.Events.dll",
+    "VSA.Handlers.Events.dll",
+    "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
+  ],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}

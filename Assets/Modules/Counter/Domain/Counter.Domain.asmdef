@@ -1,0 +1,10 @@
+{
+  "name": "Counter.Domain",
+  "references": [],
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "VSA.Domain.dll"
+  ],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}
