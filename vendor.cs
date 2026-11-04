@@ -45,8 +45,9 @@ foreach (var old in Directory.GetFiles(plugins, "*.dll").Where(path => !dlls.Con
     File.Delete(old);
     File.Delete(old + ".meta");
 }
+// Write the bytes, not File.Copy: File.Copy also copies the file mode of the NuGet cache, and git sees a change.
 foreach (var (name, path) in dlls) {
-    File.Copy(path, Path.Combine(plugins, name), overwrite: true);
+    File.WriteAllBytes(Path.Combine(plugins, name), File.ReadAllBytes(path));
 }
 Directory.Delete(output, recursive: true);
 
