@@ -21,10 +21,20 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
+      - name: Before
+        run: sha1sum Assets/Plugins/VSA/VSA.Domain.dll Assets/Plugins/VSA/System.Memory.dll
+
       - name: Vendor
         run: dotnet run --file vendor.cs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: After
+        run: |
+          sha1sum Assets/Plugins/VSA/VSA.Domain.dll Assets/Plugins/VSA/System.Memory.dll
+          sha1sum ~/.nuget/packages/vsa.domain/*/lib/netstandard2.1/VSA.Domain.dll
+          ls ~/.nuget/packages/system.memory/
+          find ~/.nuget/packages/system.memory -name System.Memory.dll | xargs sha1sum
 
       - name: Compare
         run: |
