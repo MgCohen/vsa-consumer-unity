@@ -2,7 +2,7 @@
   <!-- Only for vendor.cs: dotnet publish of this project gives the VSA packages and their dependencies for Unity. -->
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <VsaVersion>0.1.0-preview.5</VsaVersion>
+    <VsaVersion>0.1.0-preview.6</VsaVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="VSA.Domain" Version="$(VsaVersion)" />
