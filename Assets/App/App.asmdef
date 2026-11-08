@@ -8,6 +8,7 @@
   "overrideReferences": true,
   "precompiledReferences": [
     "VSA.Module.dll",
+    "VSA.Composition.dll",
     "VSA.Domain.dll",
     "VSA.Contracts.Events.dll",
     "Microsoft.Extensions.DependencyInjection.dll",

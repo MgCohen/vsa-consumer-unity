@@ -6,8 +6,7 @@
   "overrideReferences": true,
   "precompiledReferences": [
     "VSA.Contracts.Events.dll",
-    "VSA.Handlers.Events.dll",
-    "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
+    "VSA.Handlers.Events.dll"
   ],
   "autoReferenced": false,
   "noEngineReferences": true
