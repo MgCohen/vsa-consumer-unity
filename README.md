@@ -50,4 +50,5 @@ Unity.exe -batchmode -nographics -projectPath . -runTests -testPlatform EditMode
 
 - Unity 6 ships some `Microsoft.Extensions` DLLs at version 8.0. `vendor.cs` does not copy them, and `VsaVendor.csproj` uses version 8.0.
 - An assembly with a record needs its own `IsExternalInit`, for example `Assets/Modules/Counter/Contracts/Events/IsExternalInit.cs`.
-- Unity has no `deps.json`, so `AppServices` gives the modules by hand.
+- Unity has no `deps.json`, so `AppServices` gives the modules by hand to `VsaComposer`.
+- Unity does not run VSA.Sdk, so each module root gives its records by hand (`ModuleRecords.cs`): the composer finds the handlers in the listed layer assemblies.

@@ -2,6 +2,7 @@ using System;
 using Counter;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using VSA.Composition;
 using VSA.Module;
 
 namespace App {
@@ -10,10 +11,7 @@ namespace App {
         public static IServiceProvider Build() {
             var services = new ServiceCollection();
             var configuration = new ConfigurationBuilder().Build();
-            Module[] modules = { new CounterModule() };
-            foreach (var module in modules) {
-                module.Configure(new ModuleBuilder(module.Name, services, configuration));
-            }
+            new VsaComposer(new MicrosoftServices(services), configuration, new CounterModule()).Install();
             return services.BuildServiceProvider(validateScopes: true);
         }
     }
