@@ -1,0 +1,27 @@
+{
+  "name": "Spikes.Containers",
+  "references": [
+    "VContainer",
+    "App",
+    "Counter.Presenters",
+    "Counter.Contracts.Requests",
+    "Counter.Contracts.Commands",
+    "Journal.Contracts.Requests",
+    "Journal.Handlers.Requests",
+    "UnityEngine.TestRunner",
+    "UnityEditor.TestRunner"
+  ],
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll",
+    "VSA.Contracts.dll",
+    "VSA.Contracts.Requests.dll",
+    "VSA.Contracts.Commands.dll",
+    "VSA.Presenters.dll",
+    "Microsoft.Extensions.DependencyInjection.dll",
+    "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
+  ],
+  "autoReferenced": false,
+  "includePlatforms": ["Editor"],
+  "defineConstraints": ["UNITY_INCLUDE_TESTS"]
+}

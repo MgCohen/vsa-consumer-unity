@@ -22,8 +22,8 @@
     "VSA.Contracts.Commands.dll",
     "VSA.Presenters.dll",
     "VSA.Composition.dll",
-    "Microsoft.Extensions.Hosting.dll",
-    "Microsoft.Extensions.Hosting.Abstractions.dll",
+    "Microsoft.Extensions.DependencyInjection.dll",
+    "Microsoft.Extensions.Logging.Abstractions.dll",
     "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
   ],
   "autoReferenced": false,

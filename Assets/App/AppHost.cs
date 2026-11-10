@@ -1,5 +1,5 @@
 using System;
-using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using UnityEngine;
 
 namespace App {
@@ -7,21 +7,16 @@ namespace App {
     public sealed class AppHost : MonoBehaviour {
         [SerializeField] int counterMax = 5;
 
-        IHost host;
+        ServiceProvider services;
 
-        public IServiceProvider Services => host.Services;
+        public IServiceProvider Services => services;
 
         void Awake() {
-            host = AppComposition.Build(counterMax);
+            services = AppComposition.Build(counterMax);
         }
 
-        async void Start() {
-            await host.StartAsync();
-        }
-
-        async void OnDestroy() {
-            await host.StopAsync();
-            host.Dispose();
+        void OnDestroy() {
+            services?.Dispose();
         }
     }
 }
