@@ -1,0 +1,8 @@
+{
+  "name": "Counter.Infrastructure",
+  "references": ["Counter.Domain"],
+  "overrideReferences": true,
+  "precompiledReferences": ["VSA.Domain.dll", "VSA.Infrastructure.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}

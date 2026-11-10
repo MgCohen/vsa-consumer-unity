@@ -1,0 +1,8 @@
+{
+  "name": "Journal",
+  "references": ["Journal.Contracts.Requests", "Journal.Handlers.Requests"],
+  "overrideReferences": true,
+  "precompiledReferences": ["VSA.Module.dll", "VSA.Contracts.dll", "VSA.Handlers.dll", "VSA.Handlers.Requests.dll", "Microsoft.Extensions.DependencyInjection.Abstractions.dll", "Microsoft.Extensions.Configuration.Abstractions.dll", "System.ComponentModel.Annotations.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}

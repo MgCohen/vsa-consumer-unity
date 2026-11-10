@@ -1,0 +1,8 @@
+{
+  "name": "Counter.Handlers.Requests",
+  "references": ["Counter.Domain", "Counter.Contracts.Requests", "Counter.Contracts.Events", "Journal.Contracts.Requests", "Journal.Handlers.Requests"],
+  "overrideReferences": true,
+  "precompiledReferences": ["VSA.Domain.dll", "VSA.Infrastructure.dll", "VSA.Contracts.dll", "VSA.Contracts.Requests.dll", "VSA.Contracts.Events.dll", "VSA.Handlers.dll", "VSA.Handlers.Requests.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}

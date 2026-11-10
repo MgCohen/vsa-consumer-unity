@@ -1,0 +1,8 @@
+{
+  "name": "Counter.Handlers.Commands",
+  "references": ["Counter.Domain", "Counter.Contracts.Commands"],
+  "overrideReferences": true,
+  "precompiledReferences": ["VSA.Domain.dll", "VSA.Infrastructure.dll", "VSA.Contracts.dll", "VSA.Contracts.Commands.dll", "VSA.Handlers.dll", "VSA.Handlers.Commands.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}

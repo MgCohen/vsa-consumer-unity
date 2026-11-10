@@ -2,18 +2,25 @@
   <!-- Only for vendor.cs: dotnet publish of this project gives the VSA packages and their dependencies for Unity. -->
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <VsaVersion>0.1.0-preview.8</VsaVersion>
+    <VsaVersion>0.1.0-preview.9</VsaVersion>
   </PropertyGroup>
   <ItemGroup>
+    <!-- Each portable VSA layer. A module assembly lists the DLLs of its layer in precompiledReferences. -->
     <PackageReference Include="VSA.Domain" Version="$(VsaVersion)" />
+    <PackageReference Include="VSA.Contracts" Version="$(VsaVersion)" />
+    <PackageReference Include="VSA.Contracts.Requests" Version="$(VsaVersion)" />
     <PackageReference Include="VSA.Contracts.Events" Version="$(VsaVersion)" />
+    <PackageReference Include="VSA.Contracts.Commands" Version="$(VsaVersion)" />
+    <PackageReference Include="VSA.Handlers" Version="$(VsaVersion)" />
+    <PackageReference Include="VSA.Handlers.Requests" Version="$(VsaVersion)" />
     <PackageReference Include="VSA.Handlers.Events" Version="$(VsaVersion)" />
+    <PackageReference Include="VSA.Handlers.Commands" Version="$(VsaVersion)" />
     <PackageReference Include="VSA.Infrastructure" Version="$(VsaVersion)" />
+    <PackageReference Include="VSA.Presenters" Version="$(VsaVersion)" />
     <PackageReference Include="VSA.Module" Version="$(VsaVersion)" />
     <PackageReference Include="VSA.Composition" Version="$(VsaVersion)" />
-    <!-- The service container and the configuration that the app uses to start the modules.
+    <!-- VsaBuilder.UseGenericHost() needs the .NET Generic Host.
          Version 8.0, the same as the Microsoft.Extensions DLLs that Unity 6 ships. -->
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
   </ItemGroup>
 </Project>

@@ -1,33 +1,38 @@
-using System;
-using System.Threading;
-using Counter.Contracts.Events;
+using Counter.Presenters;
 using Microsoft.Extensions.DependencyInjection;
 using UnityEngine;
-using VSA.Contracts.Events;
 
 namespace App {
-    // Add this component to a GameObject with a collider. Each click on it increments the counter.
     public sealed class CounterBehaviour : MonoBehaviour {
-        [SerializeField] int max = 3;
+        [SerializeField] AppHost app;
 
-        IServiceProvider services;
-        Counter.Domain.Counter counter;
+        IServiceScope scope;
+        CounterPresenter counter;
 
-        void Awake() {
-            services = AppServices.Build();
-            counter = new Counter.Domain.Counter(Guid.NewGuid(), max);
+        async void Start() {
+            scope = app.Services.CreateScope();
+            counter = scope.ServiceProvider.GetRequiredService<CounterPresenter>();
+            counter.Changed += Show;
+            await counter.LoadAsync();
         }
 
         async void OnMouseDown() {
-            var result = counter.Increment();
-            if (!result.IsSuccess) {
-                Debug.LogWarning(result.Error.Message);
+            await counter.IncrementAsync(1);
+        }
+
+        void Show() {
+            if (counter.Increment.Error is { } error) {
+                Debug.LogWarning(error);
                 return;
             }
-            using var scope = services.CreateScope();
-            var publisher = scope.ServiceProvider.GetRequiredService<IIntegrationEventPublisher>();
-            await publisher.PublishAsync(new CounterIncremented(counter.Id, result.Value), CancellationToken.None);
-            Debug.Log($"Counter: {result.Value}");
+            Debug.Log($"Counter: {counter.Value} of {counter.Max}");
+        }
+
+        void OnDestroy() {
+            if (counter != null) {
+                counter.Changed -= Show;
+            }
+            scope?.Dispose();
         }
     }
 }

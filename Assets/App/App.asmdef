@@ -1,20 +1,8 @@
 {
   "name": "App",
-  "references": [
-    "Counter",
-    "Counter.Domain",
-    "Counter.Contracts.Events"
-  ],
+  "references": ["Counter.Presenters"],
   "overrideReferences": true,
-  "precompiledReferences": [
-    "VSA.Module.dll",
-    "VSA.Composition.dll",
-    "VSA.Domain.dll",
-    "VSA.Contracts.Events.dll",
-    "Microsoft.Extensions.DependencyInjection.dll",
-    "Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-    "Microsoft.Extensions.Configuration.dll",
-    "Microsoft.Extensions.Configuration.Abstractions.dll"
-  ],
-  "autoReferenced": false
+  "precompiledReferences": ["VSA.Composition.dll", "VSA.Presenters.dll", "Microsoft.Extensions.Hosting.dll", "Microsoft.Extensions.Hosting.Abstractions.dll", "Microsoft.Extensions.DependencyInjection.Abstractions.dll", "Microsoft.Extensions.Logging.dll", "Microsoft.Extensions.Logging.Abstractions.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": false
 }
