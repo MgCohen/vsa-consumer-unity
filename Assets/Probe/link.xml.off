@@ -1,0 +1,16 @@
+<linker>
+  <assembly fullname="VSA.Analyzers.Markers" preserve="all" />
+  <assembly fullname="VSA.Composition" preserve="all" />
+  <assembly fullname="VSA.Contracts" preserve="all" />
+  <assembly fullname="VSA.Contracts.Commands" preserve="all" />
+  <assembly fullname="VSA.Contracts.Events" preserve="all" />
+  <assembly fullname="VSA.Contracts.Requests" preserve="all" />
+  <assembly fullname="VSA.Domain" preserve="all" />
+  <assembly fullname="VSA.Handlers" preserve="all" />
+  <assembly fullname="VSA.Handlers.Commands" preserve="all" />
+  <assembly fullname="VSA.Handlers.Events" preserve="all" />
+  <assembly fullname="VSA.Handlers.Requests" preserve="all" />
+  <assembly fullname="VSA.Infrastructure" preserve="all" />
+  <assembly fullname="VSA.Module" preserve="all" />
+  <assembly fullname="VSA.Presenters" preserve="all" />
+</linker>

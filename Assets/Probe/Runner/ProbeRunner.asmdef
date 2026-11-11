@@ -1,0 +1,8 @@
+{
+  "name": "ProbeRunner",
+  "references": ["App", "Probe.Domain", "Probe.Contracts.Commands", "Probe.Handlers.Commands", "Counter.Contracts.Requests", "Journal.Contracts.Requests"],
+  "overrideReferences": true,
+  "precompiledReferences": ["VSA.Composition.dll", "VSA.Analyzers.Markers.dll", "VSA.Contracts.dll", "VSA.Contracts.Commands.dll", "VSA.Contracts.Requests.dll", "VSA.Presenters.dll", "Microsoft.Extensions.DependencyInjection.dll", "Microsoft.Extensions.DependencyInjection.Abstractions.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": false
+}

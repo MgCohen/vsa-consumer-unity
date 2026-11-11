@@ -1,0 +1,8 @@
+{
+  "name": "Probe.Handlers.Commands",
+  "references": ["Probe.Domain", "Probe.Contracts.Commands"],
+  "overrideReferences": true,
+  "precompiledReferences": ["VSA.Domain.dll", "VSA.Contracts.dll", "VSA.Contracts.Commands.dll", "VSA.Handlers.dll", "VSA.Handlers.Commands.dll", "VSA.Analyzers.Markers.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}

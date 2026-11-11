@@ -1,0 +1,8 @@
+{
+  "name": "Probe.Domain",
+  "references": [],
+  "overrideReferences": true,
+  "precompiledReferences": ["VSA.Domain.dll", "VSA.Analyzers.Markers.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}

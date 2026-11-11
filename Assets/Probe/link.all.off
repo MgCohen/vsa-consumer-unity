@@ -1,0 +1,32 @@
+<linker>
+  <assembly fullname="VSA.Analyzers.Markers" preserve="all" />
+  <assembly fullname="VSA.Composition" preserve="all" />
+  <assembly fullname="VSA.Contracts" preserve="all" />
+  <assembly fullname="VSA.Contracts.Commands" preserve="all" />
+  <assembly fullname="VSA.Contracts.Events" preserve="all" />
+  <assembly fullname="VSA.Contracts.Requests" preserve="all" />
+  <assembly fullname="VSA.Domain" preserve="all" />
+  <assembly fullname="VSA.Handlers" preserve="all" />
+  <assembly fullname="VSA.Handlers.Commands" preserve="all" />
+  <assembly fullname="VSA.Handlers.Events" preserve="all" />
+  <assembly fullname="VSA.Handlers.Requests" preserve="all" />
+  <assembly fullname="VSA.Infrastructure" preserve="all" />
+  <assembly fullname="VSA.Module" preserve="all" />
+  <assembly fullname="VSA.Presenters" preserve="all" />
+  <assembly fullname="Counter" preserve="all" />
+  <assembly fullname="Counter.Domain" preserve="all" />
+  <assembly fullname="Counter.Infrastructure" preserve="all" />
+  <assembly fullname="Counter.Contracts.Requests" preserve="all" />
+  <assembly fullname="Counter.Contracts.Events" preserve="all" />
+  <assembly fullname="Counter.Contracts.Commands" preserve="all" />
+  <assembly fullname="Counter.Handlers.Requests" preserve="all" />
+  <assembly fullname="Counter.Handlers.Commands" preserve="all" />
+  <assembly fullname="Counter.Presenters" preserve="all" />
+  <assembly fullname="Journal" preserve="all" />
+  <assembly fullname="Journal.Contracts.Requests" preserve="all" />
+  <assembly fullname="Journal.Handlers.Requests" preserve="all" />
+  <assembly fullname="Probe" preserve="all" />
+  <assembly fullname="Probe.Domain" preserve="all" />
+  <assembly fullname="Probe.Contracts.Commands" preserve="all" />
+  <assembly fullname="Probe.Handlers.Commands" preserve="all" />
+</linker>

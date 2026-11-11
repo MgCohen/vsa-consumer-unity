@@ -13,3 +13,4 @@ TestResults*.xml
 # vendor.cs
 /Vendor/bin/
 /Vendor/obj/
+/[Bb]uilds/

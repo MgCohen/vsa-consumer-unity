@@ -1,0 +1,6 @@
+{
+  "name": "ProbeEditor",
+  "references": ["ProbeRunner"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": false
+}

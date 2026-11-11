@@ -1,0 +1,8 @@
+{
+  "name": "Probe",
+  "references": ["Probe.Domain", "Probe.Contracts.Commands", "Probe.Handlers.Commands"],
+  "overrideReferences": true,
+  "precompiledReferences": ["VSA.Module.dll", "VSA.Domain.dll", "Microsoft.Extensions.DependencyInjection.Abstractions.dll", "Microsoft.Extensions.Configuration.Abstractions.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}
