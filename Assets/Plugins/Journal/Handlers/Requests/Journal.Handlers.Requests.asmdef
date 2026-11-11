@@ -1,0 +1,8 @@
+{
+  "name": "Journal.Handlers.Requests",
+  "references": ["Journal.Contracts.Requests"],
+  "overrideReferences": true,
+  "precompiledReferences": ["VSA.Contracts.dll", "VSA.Handlers.dll", "VSA.Handlers.Requests.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}
