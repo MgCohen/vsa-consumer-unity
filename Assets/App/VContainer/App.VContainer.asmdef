@@ -1,0 +1,8 @@
+{
+  "name": "App.VContainer",
+  "references": ["VContainer"],
+  "overrideReferences": true,
+  "precompiledReferences": ["VSA.Composition.dll", "Microsoft.Extensions.DependencyInjection.dll", "Microsoft.Extensions.DependencyInjection.Abstractions.dll"],
+  "autoReferenced": false,
+  "noEngineReferences": false
+}
