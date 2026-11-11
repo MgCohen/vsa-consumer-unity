@@ -13,18 +13,19 @@ flowchart LR
     J --> IH[IncrementHandler]
     IH -->|CounterIncremented| P
     J -->|WriteJournal| L[JournalLog]
-    A[AppHost] -->|builds| H[Generic host]
+    A[AppHost] -->|builds| H[ServiceProvider]
 ```
 
 | Part | Path | Shows |
 |---|---|---|
-| Composition | `Assets/App/AppComposition.cs` | The build of the generic host |
-| Host | `Assets/App/AppHost.cs` | Start and stop with the scene |
+| Composition | `Assets/App/AppComposition.cs` | `AddVsa`, with no host |
+| App root | `Assets/App/AppHost.cs` | Builds the container with the scene, and disposes it |
+| Unity console logs | `Assets/App/UnityLogProvider.cs` | An optional log provider that calls `Debug.Log` |
+| VContainer | `Assets/App/VContainer/` | `builder.RegisterVsa(...)`: VContainer resolves the VSA services |
 | Use of a module | `Assets/App/CounterBehaviour.cs` | A presenter in a `MonoBehaviour` |
 | Module root | `Assets/Modules/Counter/CounterModule.cs` | Settings, services, repository |
 | Plugin root | `Assets/Plugins/Journal/JournalPlugin.cs` | Settings, a custom pipeline |
-| Root records | `ModuleRecords.cs` in each root | The data that VSA.Sdk writes in .NET |
-| Tests | `Assets/Tests/EditMode/` | Domain tests and composition tests |
+| Tests | `Assets/Tests/EditMode/` | Domain tests, composition tests and VContainer tests |
 
 ## Start a project
 
@@ -81,31 +82,36 @@ A layer of a module gets the same layer of each plugin module, for example `Coun
 `AppComposition` builds the app. It is the Unity form of `Program.cs`. `AppHost` and the tests use it.
 
 ```csharp
-public static IHost Build(int counterMax) =>
-    VsaBuilder.Create($"--Modules:Counter:Max={counterMax}")
-        .UseGenericHost()
-        .Services(services => services.AddLogging(logging => logging.ClearProviders()))
-        .Build();
+public static IServiceCollection Compose(int counterMax) =>
+    new ServiceCollection()
+        .AddLogging(logging => logging.AddProvider(new UnityLogProvider()))
+        .AddVsa($"--Modules:Counter:Max={counterMax}");
+
+public static ServiceProvider Build(int counterMax) => Compose(counterMax).BuildServiceProvider();
 ```
 
-The generic host adds the Windows EventLog logger. Mono in Unity does not support it and throws `PlatformNotSupportedException`, so `ClearProviders` removes the default log providers.
+A Unity app uses no host. Unity owns the process, so the app needs only the VSA registrations. `UnityLogProvider` is optional: with no provider, the logs go nowhere.
 
-`AppScan` finds the module roots in the loaded assemblies. A root assembly has the records that VSA.Sdk writes in .NET:
+`AppScan` finds the module roots in the loaded assemblies. A module root is an assembly with one public class that inherits `Module` or `Plugin`. The layer assemblies of a module are the assemblies named `<Module>.<Layer>`, for example `Counter.Handlers.Requests`. A Unity module needs no records file.
+
+### VContainer
+
+`RegisterVsa` builds the Microsoft container and routes each VSA service to VContainer. A singleton comes from the root. A scoped or transient service comes from one VSA scope for each VContainer scope.
 
 ```csharp
-[assembly: AssemblyMetadata("VsaModule", "Journal")]
-[assembly: AssemblyMetadata("VsaRootFolder", "Plugins")]
-[assembly: AssemblyMetadata("VsaLayerAssembly", "Journal.Contracts.Requests")]
-[assembly: AssemblyMetadata("VsaLayerAssembly", "Journal.Handlers.Requests")]
+public sealed class AppScope : LifetimeScope {
+    [SerializeField] int counterMax = 5;
+
+    protected override void Configure(IContainerBuilder builder) =>
+        builder.RegisterVsa(AppComposition.Compose(counterMax));
+}
 ```
 
-| Record | Value |
-|---|---|
-| `VsaModule` | The module name, the same as the root assembly |
-| `VsaRootFolder` | `Modules` for a module, `Plugins` for a plugin module |
-| `VsaLayerAssembly` | One record for each layer assembly |
+The code is in the app, not in VSA, because VContainer is not on NuGet.
 
-The host finds the handlers, the validators and the presenters in the layer assemblies. If a layer is not in the records, the host does not find its types.
+### Factories
+
+A factory makes an object that the container cannot make, for example a Unity object from a prefab. Use `IFactory<T>` and `services.AddFactory(...)` from VSA.Composition. The factory gets the services. The object gets only what the factory gives it.
 
 ### A module root
 
@@ -131,11 +137,11 @@ public sealed class JournalPlugin : Plugin<JournalSettings> {
 }
 ```
 
-A request that derives from `Journaled` goes through this pipeline. The host configures the plugin roots before the module roots.
+A request that derives from `Journaled` goes through this pipeline. `AddVsa` configures the plugin roots before the module roots.
 
 ### Settings
 
-The host binds `Modules:<Name>` to the settings of each root. `AppHost` gives the values as command line arguments from serialized fields. If a value is not valid, `Build()` stops with `Modules:Counter is not valid: ...`.
+`AddVsa` binds `Modules:<Name>` to the settings of each root. `AppHost` gives the values as command line arguments from serialized fields. If a value is not valid, `AddVsa` stops with `Modules:Counter is not valid: ...`.
 
 ## Update VSA
 
