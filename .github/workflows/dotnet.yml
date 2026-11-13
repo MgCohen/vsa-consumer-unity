@@ -1,0 +1,28 @@
+# Builds the module projects in Source/ and runs the .NET tests of all modules (dotnet test).
+# The Unity tests and the IL2CPP check need a Unity license, so they run on a dev machine (see README.md).
+name: dotnet
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      # VsaUnityCopy=false: the build does not change the committed DLLs in Assets/Plugins/VSA/.
+      - name: Test
+        run: dotnet test --solution MyApp.slnx -p:VsaUnityCopy=false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

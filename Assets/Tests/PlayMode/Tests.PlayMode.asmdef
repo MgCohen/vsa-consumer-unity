@@ -1,0 +1,15 @@
+{
+  "name": "Tests.PlayMode",
+  "rootNamespace": "Tests.PlayMode",
+  "references": ["MyApp", "Counter", "VSA.Unity", "UnityEngine.UI", "UnityEngine.TestRunner", "UnityEditor.TestRunner"],
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll",
+    "VSA.Module.dll",
+    "VSA.Presenters.dll",
+    "Journal.Handlers.Requests.dll",
+    "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": ["UNITY_INCLUDE_TESTS"]
+}

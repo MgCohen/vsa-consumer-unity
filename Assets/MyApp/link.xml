@@ -1,0 +1,11 @@
+<!-- IL2CPP keep rules of the app (com.vsa.core 0.1.0-preview.26 does not give them).
+     Journal: no assembly references the plugin root, so the UnityLinker deletes it, and the app scan does not find the plugin.
+     Journal.Handlers.Requests: only ActivatorUtilities makes the WriteJournal step, so the UnityLinker deletes its constructor.
+     CounterSettings: only the configuration binder sets Max, so the UnityLinker deletes the setter. -->
+<linker>
+  <assembly fullname="Journal" preserve="all" />
+  <assembly fullname="Journal.Handlers.Requests" preserve="all" />
+  <assembly fullname="Counter">
+    <type fullname="Counter.CounterSettings" preserve="all" />
+  </assembly>
+</linker>

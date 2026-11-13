@@ -1,8 +1,0 @@
-{
-  "name": "Counter.Contracts.Commands",
-  "references": [],
-  "overrideReferences": true,
-  "precompiledReferences": ["VSA.Contracts.dll", "VSA.Contracts.Commands.dll"],
-  "autoReferenced": false,
-  "noEngineReferences": true
-}
