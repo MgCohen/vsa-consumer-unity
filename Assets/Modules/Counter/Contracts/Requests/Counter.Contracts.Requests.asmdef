@@ -1,8 +1,0 @@
-{
-  "name": "Counter.Contracts.Requests",
-  "references": ["Journal.Contracts.Requests"],
-  "overrideReferences": true,
-  "precompiledReferences": ["VSA.Contracts.dll", "VSA.Contracts.Requests.dll"],
-  "autoReferenced": false,
-  "noEngineReferences": true
-}

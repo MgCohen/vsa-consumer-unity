@@ -1,0 +1,6 @@
+{
+  "name": "Il2cppCheck.Editor",
+  "rootNamespace": "Il2cppCheck.Editor",
+  "references": ["VSA.Unity"],
+  "includePlatforms": ["Editor"]
+}

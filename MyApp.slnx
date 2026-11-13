@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Plugins/">
+    <Project Path="Source/Plugins/Journal/Journal.csproj" />
+    <Project Path="Source/Plugins/Journal/Projects/Journal.Contracts.Requests.csproj" />
+    <Project Path="Source/Plugins/Journal/Projects/Journal.Handlers.Requests.csproj" />
+  </Folder>
+  <Project Path="Source/MyApp.Tests/MyApp.Tests.csproj" />
+</Solution>

@@ -1,8 +1,0 @@
-{
-  "name": "App",
-  "references": ["Counter.Presenters"],
-  "overrideReferences": true,
-  "precompiledReferences": ["VSA.Composition.dll", "VSA.Presenters.dll", "Microsoft.Extensions.DependencyInjection.dll", "Microsoft.Extensions.DependencyInjection.Abstractions.dll", "Microsoft.Extensions.Logging.dll", "Microsoft.Extensions.Logging.Abstractions.dll", "Microsoft.Extensions.Configuration.Abstractions.dll"],
-  "autoReferenced": false,
-  "noEngineReferences": false
-}

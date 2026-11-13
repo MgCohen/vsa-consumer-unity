@@ -1,8 +1,0 @@
-{
-  "name": "Counter",
-  "references": ["Counter.Domain", "Counter.Infrastructure", "Counter.Contracts.Requests", "Counter.Contracts.Events", "Counter.Contracts.Commands", "Counter.Handlers.Requests", "Counter.Handlers.Commands", "Counter.Presenters"],
-  "overrideReferences": true,
-  "precompiledReferences": ["VSA.Module.dll", "VSA.Domain.dll", "VSA.Infrastructure.dll", "Microsoft.Extensions.DependencyInjection.Abstractions.dll", "Microsoft.Extensions.Configuration.Abstractions.dll", "System.ComponentModel.Annotations.dll"],
-  "autoReferenced": false,
-  "noEngineReferences": true
-}

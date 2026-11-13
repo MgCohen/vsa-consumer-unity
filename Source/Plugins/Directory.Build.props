@@ -1,0 +1,7 @@
+<Project>
+  <!-- Unity loads only netstandard2.1, so each module project of the Unity app targets it.
+       After the build, VSA.Sdk copies the DLL and the PDB of each module project to Assets/Plugins/VSA/. -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+</Project>

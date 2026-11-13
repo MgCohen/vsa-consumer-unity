@@ -1,0 +1,24 @@
+{
+  "name": "Counter",
+  "rootNamespace": "Counter",
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "VSA.Analyzers.Markers.dll",
+    "VSA.Module.dll",
+    "VSA.Domain.dll",
+    "VSA.Infrastructure.dll",
+    "VSA.Contracts.dll",
+    "VSA.Contracts.Requests.dll",
+    "VSA.Contracts.Events.dll",
+    "VSA.Contracts.Commands.dll",
+    "VSA.Handlers.dll",
+    "VSA.Handlers.Requests.dll",
+    "VSA.Handlers.Commands.dll",
+    "VSA.Presenters.dll",
+    "Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+    "System.ComponentModel.Annotations.dll",
+    "Journal.Contracts.Requests.dll"
+  ],
+  "autoReferenced": false,
+  "noEngineReferences": true
+}

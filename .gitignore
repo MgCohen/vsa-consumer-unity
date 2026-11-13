@@ -13,3 +13,15 @@ TestResults*.xml
 # vendor.cs
 /Vendor/bin/
 /Vendor/obj/
+
+# The VSA solution of the modules (Unity writes the other .sln and .slnx files)
+!/MyApp.slnx
+
+# dotnet build of Source/
+/Source/**/bin/
+/Source/**/obj/
+/Source/**/bin~/
+/Source/**/obj~/
+
+# il2cpp-check.ps1
+/Il2cppCheck/

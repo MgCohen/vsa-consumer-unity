@@ -1,0 +1,21 @@
+<Project Sdk="VSA.Sdk">
+  <!-- The .NET tests of all modules. VSA.Sdk also compiles the module sources of Assets/MyApp/Features/ and Plugins/,
+       and references each module project in Source/ and the VSA bases of the module layers. -->
+  <PropertyGroup>
+    <!-- Unity has no implicit usings, so the module sources of Assets/ have their own usings. -->
+    <ImplicitUsings>disable</ImplicitUsings>
+    <OutputType>Exe</OutputType>
+    <!-- NUnit on Microsoft.Testing.Platform (global.json). -->
+    <EnableNUnitRunner>true</EnableNUnitRunner>
+    <!-- CA1707: a test name has underscores. -->
+    <NoWarn>$(NoWarn);CA1707</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="VSA.Testing.Unit" Version="$(VsaVersion)" />
+    <!-- VSA 0.1.0-preview.26 does not reference the layer packages for a .Tests project of a Unity app.
+         VSA.Testing.Unit gives the most of them. VSA.Presenters is not in it. -->
+    <PackageReference Include="VSA.Presenters" Version="$(VsaVersion)" />
+    <PackageReference Include="NUnit" Version="4.6.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="6.3.1" />
+  </ItemGroup>
+</Project>
