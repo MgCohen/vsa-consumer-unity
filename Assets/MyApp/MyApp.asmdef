@@ -1,5 +1,0 @@
-{
-  "name": "MyApp",
-  "rootNamespace": "MyApp",
-  "references": ["Counter", "VSA.Unity", "UnityEngine.UI"]
-}
