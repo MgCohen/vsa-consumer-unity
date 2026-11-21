@@ -1,5 +1,0 @@
-{
-  "name": "Il2cppCheck",
-  "rootNamespace": "Il2cppCheck",
-  "references": ["MyApp", "Counter", "VSA.Unity", "UnityEngine.UI"]
-}
