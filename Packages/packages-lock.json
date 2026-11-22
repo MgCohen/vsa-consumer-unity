@@ -75,13 +75,13 @@
       }
     },
     "com.vsa.core": {
-      "version": "https://github.com/MgCohen/vsa-unity.git?path=/Packages/com.vsa.core#5f5f4fb395804988810a97e2592d25a37ef4b290",
+      "version": "https://github.com/MgCohen/vsa-unity.git?path=/Packages/com.vsa.core#beb7427e7edb42cf13c102e2f3f97c6f34b8ea1b",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.ugui": "2.6.0"
       },
-      "hash": "5f5f4fb395804988810a97e2592d25a37ef4b290"
+      "hash": "beb7427e7edb42cf13c102e2f3f97c6f34b8ea1b"
     },
     "com.unity.modules.animation": {
       "version": "1.0.0",
