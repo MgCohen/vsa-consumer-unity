@@ -1,13 +1,13 @@
 # vsa-consumer-unity
 
-A Unity 6000.6 project that installs the UPM package `com.vsa.core` ([vsa-unity](https://github.com/MgCohen/vsa-unity)) from its git URL. It runs the dice sample of vsa-unity as a consumer does. It is the install check of the package.
+A Unity 6000.6 project that installs the UPM package `com.umpire.unity` ([vsa-unity](https://github.com/MgCohen/vsa-unity)) from its git URL. It runs the dice sample of vsa-unity as a consumer does. It is the install check of the package.
 
 ## Install
 
-`Packages/manifest.json` has the git URL with the package folder and a commit:
+`Packages/manifest.json` has the git URL with the package folder and a release tag:
 
 ```json
-"com.vsa.core": "https://github.com/MgCohen/vsa-unity.git?path=/Packages/com.vsa.core#<commit or tag>"
+"com.umpire.unity": "https://github.com/MgCohen/vsa-unity.git?path=/Packages/com.umpire.unity#<commit or tag>"
 ```
 
 To test another version of the package, change the part after `#` to a commit, a branch or a tag. Unity installs the package again when the manifest changes.
