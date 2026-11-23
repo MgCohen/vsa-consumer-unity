@@ -16,7 +16,7 @@ To test another version of the package, change the part after `#` to a commit, a
 
 | Path | Content |
 |---|---|
-| `Assets/DiceGame/` | The dice sample of vsa-unity, copied 1:1 with its `.meta` files. `App/Host/DiceArchitecture.cs` is its own definition. |
+| `Assets/DiceGame/` | The dice sample of vsa-unity, copied 1:1 with its `.meta` files. `Definition/DiceArchitecture.cs` is its own definition. The app has the roots `App/`, `Definition/` and `Views/`. |
 | `Assets/DiceGame/Scenes/MainMenu.unity` | The first scene: a Start button |
 | `Assets/DiceGame/Scenes/DiceGame.unity` | The game scene: the shell `DiceShell`, a Roll button, a label and a roll list |
 | `docs/images/` | Captures of the check |
@@ -28,4 +28,4 @@ To test another version of the package, change the part after `#` to a commit, a
 3. Select Start, then select Roll three times.
 4. The label shows `Rolls: 3` and the last roll. The roll list shows one line for each roll: a prefab factory makes each line. The Console has no errors.
 
-![The dice sample after three rolls](docs/images/dice-preview-23.png)
+![The dice sample after three rolls](docs/images/dice-preview-24.png)
