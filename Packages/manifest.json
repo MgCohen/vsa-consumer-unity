@@ -5,7 +5,7 @@
     "com.unity.modules.jsonserialize": "1.0.0",
     "com.unity.test-framework": "1.8.0",
     "com.unity.ugui": "2.6.0",
-    "com.vsa.core": "https://github.com/MgCohen/vsa-unity.git?path=/Packages/com.vsa.core#beb7427e7edb42cf13c102e2f3f97c6f34b8ea1b",
+    "com.vsa.core": "https://github.com/MgCohen/vsa-unity.git?path=/Packages/com.vsa.core#e610c76124dbe365dd4020a61e068e358025595c",
     "com.unity.pipeline": "1.0.0"
   }
 }
